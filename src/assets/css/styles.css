@@ -1,0 +1,19 @@
+/* Importar fuentes custom*/
+@font-face {
+    font-family: "yanone";
+    src: url("../fonts/yanone.ttf");
+}
+
+@font-face {
+    font-family: "finger";
+    src: url("../fonts/finger.ttf");
+}
+
+@font-face {
+    font-family: "titilium";
+    src: url("../fonts/titilium.ttf");
+}
+/* Estilos generales */
+body {
+    font-family: "yanone", arial, helvetica;
+}
