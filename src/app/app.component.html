@@ -1,17 +1,27 @@
-<h1>Proyecto de prueba con Angular</h1>
-<ul>
-  <li>
-    <a [routerLink]="['/sobre-mi']">Sobre mi</a>
-  </li>
-  <li>
-    <a [routerLink]="['/proyecto']">Proyecto</a>
-  </li>
-  <li>
-    <a [routerLink]="['/crear-proyecto']">crear proyecto</a>
-  </li>
-  <li>
-    <a [routerLink]="['/contacto']">Conacto</a>
-  </li>
-</ul>
+<header>
+  <ul>
+    <li>
+      <a [routerLink]="['/sobre-mi']" [routerLinkActive]="['activated']">Sobre mi</a>
+    </li>
+    <li>
+      <a [routerLink]="['/proyectos']" [routerLinkActive]="['activated']">Proyecto</a>
+    </li>
+    <li id="logo">
+      <a href="#">CG</a>
+    </li>
+    <li>
+      <a [routerLink]="['/crear-proyecto']" [routerLinkActive]="['activated']">Crear proyecto</a>
+    </li>
+    <li>
+      <a [routerLink]="['/contacto']" [routerLinkActive]="['activated']">Contacto</a>
+    </li>
+  </ul>
+</header>
 
-<router-outlet></router-outlet>
+<section id="content">
+  <router-outlet></router-outlet>
+</section>
+
+<footer>
+  Master en Javascript de Carlos &copy;
+</footer>
