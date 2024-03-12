@@ -25,7 +25,7 @@ body {
     background: url("../img/pattern.png");
     font-family: "yanone", Arial, Helvetica;
     font-size: 20px;
-    background-attachment: fixed; /* It is necessary to keep the background fixed and prevent it from moving when the user scrolls */
+    background-attachment: fixed; /* Esto es necesario para cuando el usuario haga scroll, el fondo se quede en la posicion fijado */
 }
 
 .clearfix{
@@ -47,7 +47,7 @@ header {
 header ul {
     display: block;
     width: 29%;
-    height: inherit; /* Inherit means that it is inherited from the parent. */
+    height: inherit; /* Significa que el padre tb lo hereda */
     margin: 0px auto;
 }
 header ul li {
