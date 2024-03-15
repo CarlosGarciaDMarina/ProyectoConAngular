@@ -30,7 +30,7 @@ export class CreateComponent {
   // Método 
   onSubmit(form:any){
     console.log(this.project);
-    // Utilizamos el método savePRoject que hemos creado en projectService, le pasamos el project y utilizamos el metodo subscribe para recoger la respuesta
+    // Utilizamos el método saveProject que hemos creado en projectService, le pasamos el project y utilizamos el metodo subscribe para recoger la respuesta
     this._projectService.saveProject(this.project).subscribe( // Subscribe tiene 2 funciones de callback
       response => {
         //Recogemos la respuesta
