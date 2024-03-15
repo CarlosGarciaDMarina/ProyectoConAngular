@@ -18,5 +18,14 @@ export class ProjectService{
         return 'Probando el servicio de Angular';
     }
 
+    // Método para guardar un proyecto en la base de datos
+    saveProject(project: Project): Observable<any>{
+        let params = JSON.stringify(project); // Guardara los datos que le pasemos en formato JSON
+        let headers = new HttpHeaders().set('Content-Type','application/json'); // Establecemos las cabeceras (como se va a enviar la información)
+
+        // Para dar de alta algo en el API necesitamos usar el siguiente metodo
+        return this._http.post(this.url + 'save-project', params, {headers: headers}); // le pasamos la url de nuestra API, le concatenamos el metodo de la api, le pasamos los params y los headers
+    }
+
 
 }
