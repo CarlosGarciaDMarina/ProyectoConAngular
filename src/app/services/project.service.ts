@@ -32,7 +32,7 @@ export class ProjectService{
         // Creamos una variable para enviar la información en formato json
         let headers = new HttpHeaders().set('Content-Type', 'application/json');
 
-        //Hacemos la peticion AJAX por GET
+        // Hacemos la peticion AJAX por GET
         return this._http.get(this.url + 'projects', {headers: headers});
     }
 

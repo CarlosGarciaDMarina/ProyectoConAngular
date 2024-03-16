@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Project } from '../../models/projects'; // Imporamos el proyecto
+import { Project } from '../../models/projects'; // Importamos el proyecto
 import { ProjectService } from '../../services/project.service'; // Importamos los servicios
 import { Global } from '../../services/global'; // Importamos Global para conseguir la URL
 
@@ -18,7 +18,7 @@ export class ProjectsComponent {
   public url: string;
 
   constructor(
-    private _projectService: ProjectService //Cargamos el servicio en el constructor para inyectar el objeto
+    private _projectService: ProjectService // Cargamos el servicio en el constructor para inyectar el objeto
   ){
     this.url = Global.url;
   }
