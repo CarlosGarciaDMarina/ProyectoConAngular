@@ -3,6 +3,8 @@ import { Project } from '../../models/projects';
 import { ProjectService } from '../../services/project.service';
 import { UploadService } from '../../services/upload.service'; // Cargamos el servicio para utilizar la funcion 
 import { Global } from '../../services/global'; // Importamos Global para utilizar la url
+import { Router, ActivatedRoute, Params } from '@angular/router'; // Lo necesitamos para poder acceder al id del proyecto
+
 
 @Component({
   selector: 'app-create',
@@ -13,8 +15,9 @@ import { Global } from '../../services/global'; // Importamos Global para utiliz
     UploadService // Cargamos el servicio 
   ]
 })
-export class CreateComponent {
+export class CreateComponent implements OnInit {
 
+  public url: string;
   public title: string;
   public project: Project;
   public save_project: any;
@@ -24,9 +27,12 @@ export class CreateComponent {
 
   constructor(
     private _projectService: ProjectService,
-    private _uploadService: UploadService // Cargamos la propiedad en la clase
+    private _uploadService: UploadService, // Cargamos la propiedad en la clase
+    private _router: Router,
+    private _route: ActivatedRoute
 
   ) {
+    this.url = Global.url;
     this.title = "Carlos García de Marina";
     this.project = new Project('', '', '', '', 2024, '','');
   }
@@ -55,7 +61,6 @@ export class CreateComponent {
               
               form.reset(); // método para vaciar el formulario
           });
-
         } else {
           // Si no me llega
           this.status = "failed";

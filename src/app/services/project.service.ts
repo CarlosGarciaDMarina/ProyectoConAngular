@@ -53,5 +53,15 @@ export class ProjectService{
         return this._http.delete(this.url + 'project/'+id, {headers: headers}); // le pasamos la url de nuestra API, le concatenamos el metodo de la api, le pasamos la id del proyecto y los headers
     }
 
+    // Método para editar un proyecto
+    updateProject(project: any): Observable<any> {
+        let params = JSON.stringify(project) // Convertimos el proyecto a JSON
+        let headers = new HttpHeaders().set('Content-Type','application/json'); // Establecemos las cabeceras (como se va a enviar la información)
+
+        // Para dar de alta algo en el API necesitamos usar el siguiente metodo
+        return this._http.put(this.url + 'project/'+project._id,params, {headers: headers}); // le pasamos la url de nuestra API, le concatenamos el metodo de la api, le pasamos la id del proyecto y los headers
+
+    }
+
 
 }
