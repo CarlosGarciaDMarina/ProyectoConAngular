@@ -36,12 +36,21 @@ export class ProjectService{
         return this._http.get(this.url + 'projects', {headers: headers});
     }
 
+    // Método para obtener un solo proyecto 
     getProject(id: any): Observable<any>{
         let headers = new HttpHeaders().set('Content-Type','application/json'); // Establecemos las cabeceras (como se va a enviar la información)
 
         // Para dar de alta algo en el API necesitamos usar el siguiente metodo
-        return this._http.get(this.url + 'project/'+id, {headers: headers}); // le pasamos la url de nuestra API, le concatenamos el metodo de la api, le pasamos la id edl proyecto y los headers
+        return this._http.get(this.url + 'project/'+id, {headers: headers}); // le pasamos la url de nuestra API, le concatenamos el metodo de la api, le pasamos la id del proyecto y los headers
 
+    }
+
+    // Método para borrar un proyecto
+    deleteProject(id:any): Observable<any> {
+        let headers = new HttpHeaders().set('Content-Type','application/json'); // Establecemos las cabeceras (como se va a enviar la información)
+
+        // Para dar de alta algo en el API necesitamos usar el siguiente metodo
+        return this._http.delete(this.url + 'project/'+id, {headers: headers}); // le pasamos la url de nuestra API, le concatenamos el metodo de la api, le pasamos la id del proyecto y los headers
     }
 
 
