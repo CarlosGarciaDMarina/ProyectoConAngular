@@ -33,7 +33,7 @@ export class CreateComponent implements OnInit {
 
   ) {
     this.url = Global.url;
-    this.title = "Carlos García de Marina";
+    this.title = "Crear un proyecto";
     this.project = new Project('', '', '', '', 2024, '','');
   }
   
