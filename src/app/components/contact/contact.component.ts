@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-contact',
@@ -7,8 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactComponent implements OnInit{
 
+  persona ={
+    nombre:'',
+    email: '',
+    asunto: '',
+    mensaje: ''
+  };
+
   //Variables
   public title: string;
+  name = new FormControl('', Validators.required);
+  
 
   constructor(){
     this.title = "Contacta conmigo";
@@ -17,4 +29,5 @@ export class ContactComponent implements OnInit{
   ngOnInit(): void {
       
   }
+
 }

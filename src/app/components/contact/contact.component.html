@@ -4,20 +4,26 @@
     <form action="">
 
         <label for="name">Nombre:</label>
-        <input type="text" name="name" />
+        <input type="text" name="name" class="form-control" [(ngModel)]="persona.nombre" #name="ngModel" required />
+        <span class="form_error" *ngIf="name.touched && !name.valid">El nombre es obligatorio</span>
 
         <label for="mail">Email:</label>
-        <input type="text" name="mail" />
+        <input type="text" name="mail" [(ngModel)]="persona.email" #mail="ngModel" required  />
+        <span class="form_error" *ngIf="mail.touched && !mail.valid">El email es obligatorio</span>
+
 
         <label for="subject">Asunto:</label>
-        <input type="text" name="subject" /><br>
+        <input type="text" name="subject" [(ngModel)]="persona.asunto" #subject="ngModel" required  />
+        <span class="form_error" *ngIf="subject.touched && !subject.valid">El asunto es obligatorio</span>
 
         <label for="subject">Mensaje:</label>
-        <textarea name="message" id="" cols="57" rows="10"></textarea>
+        <textarea name="message" cols="57" rows="10" [(ngModel)]="persona.mensaje" #message="ngModel" required ></textarea>
+        <span class="form_error" *ngIf="message.touched && !message.valid">El mensaje es obligatorio</span>
 
        <div class="botones">
-            <input type="submit" value="Enviar"/>
+            <input type="submit" value="Enviar" />
         </div>
 
     </form>
 </div>
+
